@@ -1,0 +1,17 @@
+<table class="striped">
+        <thead>
+          <tr>
+          	  <th>ID</th>
+              <th>Nombre</th>
+              <th>Observaciones</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let clase of listaClases">
+            <td>{{clase.id}}</td>
+            <td>{{clase.nombre}}</td>
+            <td>{{clase.observacion}} </td>
+          </tr>
+        </tbody>
+</table>

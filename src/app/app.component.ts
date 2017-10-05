@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
 
+
+import { EstudiantesComponent } from './estudiantes/estudiantes.component';
+import { ProfesoresComponent } from './profesores/profesores.component';
+import { ClasesComponent } from './clases/clases.component';
+
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +13,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+
 }

@@ -1,0 +1,17 @@
+<div class="row">
+    <form class="col s12">
+      <div class="row">
+ 		<h5 class="col offset-m3">Eliminar Estudiante</h5>
+        <div class="input-field col s12 m6 offset-m3">
+          <input #ide id="ide" type="text" class="validate">
+          <label for="ide">ID del Estudiante</label>
+        </div>
+
+      	
+
+		<a routerLink="/estudiantes" class="col s6 m3 offset-m3 btn">Cancelar</a>
+		<a routerLink="/estudiantes" (click)="eliminar(ide.value)" class="col s6 m3 btn">Eliminar</a>
+
+   	   </div>        
+    </form>
+  </div>

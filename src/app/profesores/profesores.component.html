@@ -1,0 +1,19 @@
+<table class="striped">
+        <thead>
+          <tr>
+          	  <th>ID</th>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th>Género</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let profesor of listaProfesores">
+            <td>{{profesor.id}}</td>
+            <td>{{profesor.nombre}}</td>
+            <td>{{profesor.apellido}} </td>
+            <td>{{profesor.genero}}</td>
+          </tr>
+        </tbody>
+</table>

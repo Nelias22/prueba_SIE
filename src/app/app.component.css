@@ -1,0 +1,15 @@
+.routeLink {
+	font-size:26px;
+	text-align: center;
+}
+
+.btnLogin{
+	font-size:14px;
+	border: 1px solid #00b8d4;
+	border-radius: 15%;
+	color: #00b8d4;
+	float:right;
+	position: relative;
+	padding: 0.5em;
+	margin: 0.5em;
+}
