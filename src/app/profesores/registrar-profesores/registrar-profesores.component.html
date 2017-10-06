@@ -1,3 +1,31 @@
-<p>
-  registrar-profesores works!
-</p>
+<div class="row">
+    <form class="col s12">
+      <div class="row">
+ 		<h5 class="col offset-m3">Registrar Nuevo Profesor</h5>
+
+        <div class="input-field col s12 m6 offset-m3">
+          <input #ide id="ide" type="number" class="validate">
+          <label for="ide">ID</label>
+        </div>
+
+        <div class="input-field col s12 m6 offset-m3">
+          <input #nombre id="nombre" type="text" class="validate">
+          <label for="nombre">Nombre</label>
+        </div>
+
+        <div class="input-field col s12 m6 offset-m3">
+          <input #apellido id="apellido" type="text" class="validate">
+          <label for="apellido">Apellido</label>
+        </div> 
+
+        <div class="input-field col s12 m6 offset-m3">
+          <input #genero id="genero" type="text" class="validate">
+          <label for="genero">Género</label>
+        </div>
+
+		<a routerLink="/profesores" class="col s6 m3 offset-m3 btn">Cancelar</a>
+		<a routerLink="/profesores" (click)="registrar(ide.value,nombre.value,apellido.value,genero.value)" class="col s6 m3 btn">Registrar</a>
+
+   	   </div>        
+    </form>
+  </div>

@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { EstudiantesComponent } from './estudiantes/estudiantes.component';
 import { ProfesoresComponent } from './profesores/profesores.component';
 import { ClasesComponent } from './clases/clases.component';
+import { LoginComponent } from './login/login.component';
 
 import { RegistrarEstudiantesComponent } from './estudiantes/registrar-estudiantes/registrar-estudiantes.component';
 import { ModificarEstudiantesComponent } from './estudiantes/modificar-estudiantes/modificar-estudiantes.component';
@@ -32,6 +33,9 @@ const routes: Routes = [
            {
             path: 'clases',
             component:ClasesComponent
+          },{
+            path:'login',
+            component:LoginComponent
           },
           {
             path: 'estudiantes/registrar',
@@ -44,6 +48,30 @@ const routes: Routes = [
           {
             path: 'estudiantes/eliminar',
             component:EliminarEstudiantesComponent
+          },
+           {
+            path: 'profesores/registrar',
+            component:RegistrarProfesoresComponent
+          },
+          {
+            path: 'profesores/modificar',
+            component:ModificarProfesoresComponent
+          },
+          {
+            path: 'profesores/eliminar',
+            component:EliminarProfesoresComponent
+          },
+           {
+            path: 'clases/registrar',
+            component:RegistrarClasesComponent
+          },
+          {
+            path: 'clases/modificar',
+            component:ModificarClasesComponent
+          },
+          {
+            path: 'clases/eliminar',
+            component:EliminarClasesComponent
           },
 
       ]

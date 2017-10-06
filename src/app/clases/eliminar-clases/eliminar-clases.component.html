@@ -1,3 +1,17 @@
-<p>
-  eliminar-clases works!
-</p>
+<div class="row">
+    <form class="col s12">
+      <div class="row">
+ 		<h5 class="col offset-m3">Elimina la Clase</h5>
+        <div class="input-field col s12 m6 offset-m3">
+          <input #ide id="ide" type="number" class="validate">
+          <label for="ide">ID de la Clase</label>
+        </div>
+
+      	
+
+		<a routerLink="/clases" class="col s6 m3 offset-m3 btn">Cancelar</a>
+		<a routerLink="/clases" (click)="eliminar(ide.value)" class="col s6 m3 btn">Eliminar</a>
+
+   	   </div>        
+    </form>
+  </div>

@@ -37,9 +37,9 @@ export class EstudiantesService {
       .catch(this.handleError);
   }
  
-  create(nombre: string, apellido: string, genero: string): Promise<Estudiante> {
+  create(id: string, nombre: string, apellido: string, genero: string): Promise<Estudiante> {
     return this.http
-      .post(this.estudiantesUrl, JSON.stringify({nombre: nombre, apellido: apellido, genero: genero}), {headers: this.headers})
+      .post(this.estudiantesUrl, JSON.stringify({id: id, nombre: nombre, apellido: apellido, genero: genero}), {headers: this.headers})
       .toPromise()
       .then(res => res.json().data as Estudiante)
       .catch(this.handleError);

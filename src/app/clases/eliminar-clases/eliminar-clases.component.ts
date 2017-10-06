@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Http } from '@angular/http';
+import { Clase } from '../clase';
+import { ClasesService } from '../clases.service';
+
 
 @Component({
   selector: 'app-eliminar-clases',
@@ -7,9 +11,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EliminarClasesComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(private clasesService: ClasesService) { }
 
   ngOnInit() {
+  }
+
+  eliminar(id: string){
+  	
+  		this.clasesService.deleteClase(id);
+  			
   }
 
 }

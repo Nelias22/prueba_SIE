@@ -15,10 +15,12 @@ import { AppComponent } from './app.component';
 import { EstudiantesComponent } from './estudiantes/estudiantes.component';
 import { ProfesoresComponent } from './profesores/profesores.component';
 import { ClasesComponent } from './clases/clases.component';
+import { LoginComponent } from './login/login.component';
 
 import {EstudiantesService} from './estudiantes/estudiantes.service';
 import {ProfesoresService} from './profesores/profesores.service';
 import {ClasesService} from './clases/clases.service';
+import {UsersService} from './login/users.service';
 
 
 import { RegistrarEstudiantesComponent } from './estudiantes/registrar-estudiantes/registrar-estudiantes.component';
@@ -30,6 +32,7 @@ import { EliminarProfesoresComponent } from './profesores/eliminar-profesores/el
 import { RegistrarClasesComponent } from './clases/registrar-clases/registrar-clases.component';
 import { ModificarClasesComponent } from './clases/modificar-clases/modificar-clases.component';
 import { EliminarClasesComponent } from './clases/eliminar-clases/eliminar-clases.component';
+
 
 @NgModule({
   declarations: [
@@ -45,7 +48,8 @@ import { EliminarClasesComponent } from './clases/eliminar-clases/eliminar-clase
     EliminarProfesoresComponent,
     RegistrarClasesComponent,
     ModificarClasesComponent,
-    EliminarClasesComponent
+    EliminarClasesComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +60,8 @@ import { EliminarClasesComponent } from './clases/eliminar-clases/eliminar-clase
   ],
   providers: [EstudiantesService,
               ProfesoresService,
-              ClasesService
+              ClasesService,
+              UsersService
               ],
   bootstrap: [AppComponent]
 })

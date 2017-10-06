@@ -1,3 +1,44 @@
-<p>
-  modificar-profesores works!
-</p>
+<div class="row">
+    <form class="col s12">
+      <div class="row">
+ 		<h5 >Modificar Profesor</h5>
+ 	</div>
+ 	<div class="row">
+        <div class="input-field col s8 ">
+          <input #ide id="ide" type="number" class="validate">
+          <label for="ide">ID del Profesor</label>
+        </div>
+        <a (click)="buscar(ide.value)" class="col s4 btn-large">Buscar</a>      	
+
+   	   </div> 
+	</form>
+
+	<form class="col s12">
+		<div class="row">
+		<p class="center-align">{{nF}}</p>	
+		</div>
+
+   	   <div class="row">
+
+          <div class="col s4">
+      			<label>Nombre:</label>
+         		 <input [(ngModel)]="this.nombre" name="nombre"  type="string">
+      		</div>
+      		<div class="col s4">
+      			<label>Apellido:</label>
+         		 <input [(ngModel)]="this.apellido" name="apellido"  type="string">
+      		</div>        
+      		<div class="col s4">
+      			<label>Género:</label>
+         		 <input [(ngModel)]="this.genero" name="genero"  type="string">
+      		</div>
+  		 
+      </div>
+
+
+		<div class="row">
+   	   		<a routerLink="/profesores" class="col s6 m3 offset-m3 btn">Cancelar</a>
+			<a routerLink="/profesores" (click)="modificar()" class="col s6 m3 btn">Modificar</a>    
+		</div> 
+    </form>
+  </div>

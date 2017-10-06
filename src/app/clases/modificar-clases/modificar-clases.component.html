@@ -1,3 +1,41 @@
-<p>
-  modificar-clases works!
-</p>
+<div class="row">
+    <form class="col s12">
+      <div class="row">
+ 		<h5 >Modificar Clase</h5>
+ 	</div>
+ 	<div class="row">
+        <div class="input-field col s8 ">
+          <input #ide id="ide" type="number" class="validate">
+          <label for="ide">ID de la Clase</label>
+        </div>
+        <a (click)="buscar(ide.value)" class="col s4 btn-large">Buscar</a>      	
+
+   	   </div> 
+	</form>
+
+	<form class="col s12">
+		<div class="row">
+		<p class="center-align">{{nF}}</p>	
+		</div>
+
+   	   <div class="row">
+
+          <div class="col s6">
+      			<label>Nombre:</label>
+         		 <input [(ngModel)]="this.nombre" name="nombre"  type="string">
+      		</div>
+      		<div class="col s6">
+      			<label>Observacion:</label>
+         		 <input [(ngModel)]="this.observacion" name="observacion"  type="string">
+      		</div>       
+      	
+  		 
+      </div>
+
+
+		<div class="row">
+   	   		<a routerLink="/clases" class="col s6 m3 offset-m3 btn">Cancelar</a>
+			<a routerLink="/clases" (click)="modificar()" class="col s6 m3 btn">Modificar</a>    
+		</div> 
+    </form>
+  </div>

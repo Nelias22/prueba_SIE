@@ -9,7 +9,7 @@ import { Profesor } from './profesor';
 export class ProfesoresService {
  
   private headers = new Headers({'Content-Type': 'application/json'});
-  private profesoresUrl = 'api/profesores';  // URL to web api
+  private profesoresUrl = 'api/profesores';  
  
   constructor(private http: Http) { }
  
@@ -21,7 +21,7 @@ export class ProfesoresService {
   }
  
  
-  getProfesor(id: number): Promise<Profesor> {
+  getProfesor(id: string): Promise<Profesor> {
     const url = `${this.profesoresUrl}/${id}`;
     return this.http.get(url)
       .toPromise()
@@ -29,7 +29,7 @@ export class ProfesoresService {
       .catch(this.handleError);
   }
  
-  delete(id: number): Promise<void> {
+  deleteProfesor(id: string): Promise<void> {
     const url = `${this.profesoresUrl}/${id}`;
     return this.http.delete(url, {headers: this.headers})
       .toPromise()
@@ -37,9 +37,9 @@ export class ProfesoresService {
       .catch(this.handleError);
   }
  
-  create(nombre: string, apellido: string, genero: string): Promise<Profesor> {
+  create(id: string, nombre: string, apellido: string, genero: string): Promise<Profesor> {
     return this.http
-      .post(this.profesoresUrl, JSON.stringify({nombre: nombre, apellido: apellido, genero: genero}), {headers: this.headers})
+      .post(this.profesoresUrl, JSON.stringify({id: id, nombre: nombre, apellido: apellido, genero: genero}), {headers: this.headers})
       .toPromise()
       .then(res => res.json().data as Profesor)
       .catch(this.handleError);
@@ -55,7 +55,7 @@ export class ProfesoresService {
   }
  
   private handleError(error: any): Promise<any> {
-    console.error('An error occurred', error); 
-    return Promise.reject(error.message || error);
+   console.log('An error occurred', error); 
+    return Promise.reject(error);
   }
 }

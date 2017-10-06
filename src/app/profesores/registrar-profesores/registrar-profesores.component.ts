@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Http } from '@angular/http';
+import { Profesor } from '../profesor';
+import { ProfesoresService } from '../profesores.service';
 
 @Component({
   selector: 'app-registrar-profesores',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistrarProfesoresComponent implements OnInit {
 
-  constructor() { }
+  constructor( private profesoresService: ProfesoresService) { }
 
   ngOnInit() {
+  }
+
+  registrar(id: string, nombre: string, apellido: string, genero: string){
+  		this.profesoresService.create(id,nombre,apellido,genero);
   }
 
 }

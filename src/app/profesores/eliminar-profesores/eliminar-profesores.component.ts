@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Http } from '@angular/http';
+import { Profesor } from '../profesor';
+import { ProfesoresService } from '../profesores.service';
+
 
 @Component({
   selector: 'app-eliminar-profesores',
@@ -7,9 +11,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EliminarProfesoresComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(private profesoresService: ProfesoresService) { }
 
   ngOnInit() {
+  }
+
+  eliminar(id: string){
+  	
+  		this.profesoresService.deleteProfesor(id);
+  			
   }
 
 }

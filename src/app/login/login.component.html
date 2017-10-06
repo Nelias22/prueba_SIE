@@ -1,0 +1,25 @@
+<div class="row">
+    <form class="col s12">
+      <div class="row">
+ 		<h5 class="col offset-m3">Iniciar Sesión</h5>
+        
+         <div class="input-field col s12 m6 offset-m3">
+          <input #user id="user" type="text" class="validate">
+          <label for="user">Usuario</label>
+        </div> 
+
+        <div class="input-field col s12 m6 offset-m3">
+          <input #pass id="pass" type="text" class="validate">
+          <label for="pass">Contraseña</label>
+        </div> 
+
+        {{msg}}
+
+
+		
+		<a (click)="iniciarSesion(user.value,pass.value)" class="col s12  m6 offset-m3 btn">Iniciar Sesión</a>
+		<a (click)="crearUsuario(user.value,pass.value)" class="col s12  m6 offset-m3 btn">Crear Usuario</a>
+
+   	   </div>        
+    </form>
+  </div>

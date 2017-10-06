@@ -21,7 +21,7 @@ export class ClasesService {
   }
  
  
-  getClase(id: number): Promise<Clase> {
+  getClase(id: string): Promise<Clase> {
     const url = `${this.clasesUrl}/${id}`;
     return this.http.get(url)
       .toPromise()
@@ -29,7 +29,7 @@ export class ClasesService {
       .catch(this.handleError);
   }
  
-  delete(id: number): Promise<void> {
+  deleteClase(id: string): Promise<void> {
     const url = `${this.clasesUrl}/${id}`;
     return this.http.delete(url, {headers: this.headers})
       .toPromise()
@@ -37,9 +37,9 @@ export class ClasesService {
       .catch(this.handleError);
   }
  
-  create(nombre: string, observacion: string): Promise<Clase> {
+  create(id: string, nombre: string, observacion: string): Promise<Clase> {
     return this.http
-      .post(this.clasesUrl, JSON.stringify({nombre: nombre, observacion: observacion}), {headers: this.headers})
+      .post(this.clasesUrl, JSON.stringify({id: id, nombre: nombre, observacion: observacion}), {headers: this.headers})
       .toPromise()
       .then(res => res.json().data as Clase)
       .catch(this.handleError);
@@ -55,7 +55,7 @@ export class ClasesService {
   }
  
   private handleError(error: any): Promise<any> {
-    console.error('An error occurred', error); 
-    return Promise.reject(error.message || error);
+  console.log('An error occurred', error); 
+    return Promise.reject(error);
   }
 }

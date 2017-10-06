@@ -13,14 +13,19 @@ export class InMemoryDataService implements InMemoryDbService {
     ];
     const clases = [
     
-      { id: 0,  nombre: 'Prueba', observacion:'Alumno' },
-      { id: 1,  nombre: 'Prueba2', observacion:'Alumno2' }
+      { id: 0,  nombre: 'Prueba', observacion:'Observación' },
+      { id: 1,  nombre: 'Prueba2', observacion:'Observación2' }
  
+    ];
+
+    const users = [
+        {id:0, user: 'admin', pass: 'admin'}
     ];
     return {
       estudiantes,
       profesores,
-      clases
+      clases,
+      users
     };
   }
 }

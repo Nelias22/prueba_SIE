@@ -15,8 +15,8 @@ export class RegistrarEstudiantesComponent implements OnInit {
   ngOnInit() {
   }
 
-  registrar(nombre: string, apellido: string, genero: string){
-  		this.estudiantesService.create(nombre,apellido,genero);
+  registrar(id: string, nombre: string, apellido: string, genero: string){
+  		this.estudiantesService.create(id,nombre,apellido,genero);
   }
 
 }
