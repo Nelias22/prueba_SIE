@@ -14,7 +14,7 @@ export class UsersService {
    constructor(private http: Http) { }
  
   getUser(name: string): Promise<User> {
-    const url = `${this.usersUrl}?name=${name}`;
+    const url = `${this.usersUrl}?user=${name}`;
     return this.http.get(url)
       .toPromise()
       .then(response => response.json().data as User)
